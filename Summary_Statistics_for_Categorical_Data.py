@@ -25,3 +25,22 @@ greenest_neighborhood = (tree_counts.index[0])
 
 print(greenest_neighborhood)
 
+# Binary Categorical Variable: Frequency and Proportion
+
+import pandas as pd
+import numpy as np
+
+# Get NYC Trees Data
+df = pd.read_csv('nyc_tree_census.csv')
+
+living_frequency = (df.status=='Alive').sum()
+
+living_proportion = (df.status=='Alive').mean()
+
+print("living_proportion=",living_proportion,"living_frequency=",living_frequency)
+
+giant_frequency = (df.trunk_diam > 30).sum()
+
+giant_proportion = (df.trunk_diam > 30).mean()
+
+print("giant_proportion =",giant_proportion,"giant_frequency =",giant_frequency)
