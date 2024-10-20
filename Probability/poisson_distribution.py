@@ -27,3 +27,21 @@ print(np.var(rand_vars_17))
 print(np.min(rand_vars_17),np.max(rand_vars_17))
 
 
+import scipy.stats as stats
+import numpy as np
+
+## Checkpoint 1
+expected_bonus = 75000*.08
+print(expected_bonus)
+
+
+## Checkpoint 2
+num_goals = stats.poisson.rvs(4, size=100)
+
+
+## Checkpoint 3
+print(np.var(num_goals))
+
+## Checkpoint 4
+num_goals_2 = num_goals*2
+print(np.var(num_goals_2))
