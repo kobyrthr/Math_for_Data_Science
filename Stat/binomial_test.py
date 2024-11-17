@@ -52,4 +52,10 @@ null_max = np.max(null_outcomes)
 
 print("Max is:",null_max, " and min is:", null_min)
 
+null_outcomes = np.array(null_outcomes)
+
+p_value = np.sum((null_outcomes <= 41) | (null_outcomes >= 59))/len(null_outcomes)
+
+print(p_value)
+
 
