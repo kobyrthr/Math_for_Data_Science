@@ -21,3 +21,14 @@ print("number of purchases is", num_purchased)
 
 
 #calculate and print num_purchased:
+
+#simulate one visitor:
+one_visitor = np.random.choice(["y","n"],size=1, p=[.1,.9])
+
+print("Did the visitor purchase?:",one_visitor)
+
+#simulate 500 visitors:
+
+simulated_monthly_visitors = np.random.choice(["y","n"],size=500, p=[.1,.9])
+
+print(simulated_monthly_visitors)
