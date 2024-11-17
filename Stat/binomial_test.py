@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import codecademylib3
+from scipy.stats import binom_test
 
 monthly_report = pd.read_csv('monthly_report.csv')
 
@@ -69,4 +70,15 @@ def simulation_binomial_test(observed_successes,n,p):
   #return the p-value
   return p_value
 
+# Using the binom_test function from scipy
+
+
+p_value_2sided= binom_test(41, n=500, p=.1)
+
+print(p_value_2sided)
+# calculate p_value_1sided here:
+
+p_value_1sided = binom_test(41, n=500, p=.1,alternative = 'less')
+
+print(p_value_1sided)
 
