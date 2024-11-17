@@ -32,3 +32,24 @@ print("Did the visitor purchase?:",one_visitor)
 simulated_monthly_visitors = np.random.choice(["y","n"],size=500, p=[.1,.9])
 
 print(simulated_monthly_visitors)
+
+
+
+null_outcomes = []
+
+#start for loop here:
+for i in range(10000):
+  simulated_monthly_visitors = np.random.choice(['y', 'n'], size=500, p=[0.1, 0.9])
+  num_purchased = np.sum(simulated_monthly_visitors == 'y')
+  null_outcomes.append(num_purchased)
+
+
+#calculate the minimum and maximum values in null_outcomes here:
+
+null_min = np.min(null_outcomes)
+
+null_max = np.max(null_outcomes)
+
+print("Max is:",null_max, " and min is:", null_min)
+
+
