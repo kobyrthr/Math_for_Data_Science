@@ -52,10 +52,21 @@ null_max = np.max(null_outcomes)
 
 print("Max is:",null_max, " and min is:", null_min)
 
-null_outcomes = np.array(null_outcomes)
+def simulation_binomial_test(observed_successes,n,p):
+  #initialize null_outcomes
+  null_outcomes = []
+  
+  #generate the simulated null distribution
+  for i in range(10000):
+    simulated_monthly_visitors = np.random.choice(['y', 'n'], size=n, p=[p, 1-p])
+    num_purchased = np.sum(simulated_monthly_visitors == 'y')
+    null_outcomes.append(num_purchased)
 
-p_value = np.sum((null_outcomes <= 41) | (null_outcomes >= 59))/len(null_outcomes)
-
-print(p_value)
+  #calculate a 1-sided p-value
+  null_outcomes = np.array(null_outcomes)
+  p_value = np.sum(null_outcomes <= observed_successes)/len(null_outcomes) 
+  
+  #return the p-value
+  return p_value
 
 
